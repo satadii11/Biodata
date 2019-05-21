@@ -19,7 +19,7 @@ import io.github.golok.biodata.utils.SharedPreferencesUtil;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Senin, 21 Mei 2019
+ * Selasa, 21 Mei 2019
  */
 public class OnBoardingThirdFragment extends Fragment {
 

@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Senin, 21 Mei 2019
+ * Selasa, 21 Mei 2019
  */
 public class OnBoardingAdapter extends FragmentStatePagerAdapter {
     private static final int MAX_ITEM = 3;
