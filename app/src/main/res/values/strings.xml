@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">Biodata</string>
+
+    <string name="action_start">Mulai</string>
+    <string name="action_save">Save</string>
+
+    <string name="menu_profile">Profile</string>
+    <string name="menu_contact">Contact</string>
+    <string name="menu_friends">Friends</string>
+    <string name="menu_friend">Detail</string>
+    <string name="menu_add_friend">Add Friend</string>
+    <string name="menu_edit_friend">Edit Friend</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_detele">Delete</string>
+    <string name="menu_add">Add</string>
+
+    <string name="message_onboard_first_subtitle">Ketahui identitas diri dari\npengembang aplikasi</string>
+    <string name="message_onboard_second_subtitle">Hubungi pengembang aplikasi melalui Email, \nInstagram dan media sosial lainnya</string>
+    <string name="message_onboard_third_subtitle">Temukan teman-teman dari \npengembang aplikasi</string>
+    <string name="message_name">Name</string>
+    <string name="message_kelas">Class</string>
+    <string name="message_nim">NIM</string>
+    <string name="message_email">Email</string>
+    <string name="message_birthday">Birthday</string>
+    <string name="message_phone">Phone</string>
+    <string name="message_description">Description</string>
+    <string name="message_instagram">Instagram</string>
+    <string name="message_github">Github</string>
+    <string name="message_facebook">Facebook</string>
+    <string name="message_linkedin">LinkedIn</string>
+
+    <string name="my_name">Satria Adi Putra</string>
+    <string name="my_email">satadii11@gmail.com</string>
+    <string name="my_birthday">14 September 1998</string>
+    <string name="my_phone">082120574794</string>
+    <string name="my_nim">10116167</string>
+    <string name="my_class">IF-4</string>
+    <string name="my_instagram">satadii11</string>
+    <string name="my_linkedin">satadii11</string>
+    <string name="my_facebook">satadii11</string>
+    <string name="my_github">golok56</string>
+    <string name="my_description">Saya adalah seorang mahasiswa Teknik Informatika di Universitas Komputer Indonesia. Saya menyukai hal-hal berbau problem solving. Saya menekuni pemrograman Android sejak Semester 3. Sekarang saya sedang mempelajari Machine Learning untuk menyelesaikan skripsi saya nanti.</string>
 </resources>
