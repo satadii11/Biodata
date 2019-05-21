@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Biodata</string>
-    <string name="action_start">Mulai</string>
 
+    <string name="action_start">Mulai</string>
     <string name="action_save">Save</string>
 
     <string name="menu_profile">Profile</string>
@@ -12,6 +12,7 @@
     <string name="menu_edit_friend">Edit Friend</string>
     <string name="menu_edit">Edit</string>
     <string name="menu_detele">Delete</string>
+    <string name="menu_add">Add</string>
 
     <string name="message_onboard_first_subtitle">Ketahui identitas diri dari\npengembang aplikasi</string>
     <string name="message_onboard_second_subtitle">Hubungi pengembang aplikasi melalui Email, \nInstagram dan media sosial lainnya</string>
