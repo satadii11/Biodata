@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/menu_edit_friend" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_edit_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/message_name" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_edit_nim"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/til_edit_name"
+            app:layout_constraintStart_toStartOf="@+id/til_edit_name"
+            app:layout_constraintTop_toBottomOf="@+id/til_edit_name">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_edit_nim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/message_nim"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_edit_kelas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/til_edit_name"
+            app:layout_constraintStart_toStartOf="@+id/til_edit_name"
+            app:layout_constraintTop_toBottomOf="@id/til_edit_nim">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_edit_kelas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/message_kelas" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_edit_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/til_edit_name"
+            app:layout_constraintStart_toStartOf="@+id/til_edit_name"
+            app:layout_constraintTop_toBottomOf="@+id/til_edit_kelas">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/message_email" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_edit_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/til_edit_name"
+            app:layout_constraintStart_toStartOf="@+id/til_edit_name"
+            app:layout_constraintTop_toBottomOf="@id/til_edit_email">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_edit_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/message_phone"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_edit_instagram"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/til_edit_name"
+            app:layout_constraintStart_toStartOf="@id/til_edit_name"
+            app:layout_constraintTop_toBottomOf="@id/til_edit_phone">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_edit_instagram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/message_instagram" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_edit_save"
+            style="@style/ColoredButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_save"
+            app:layout_constraintEnd_toEndOf="@+id/til_edit_name"
+            app:layout_constraintStart_toStartOf="@+id/til_edit_name"
+            app:layout_constraintTop_toBottomOf="@+id/til_edit_instagram" />
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
