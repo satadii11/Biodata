@@ -3,6 +3,12 @@ package io.github.golok.biodata.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+/**
+ * Satria Adi Putra
+ * 10116167
+ * IF-4
+ * Senin, 20 Mei 2019
+ */
 public class SharedPreferencesUtil {
     private static final String SHARED_PREFERENCES_NAME = "biodata_preferences";
     private static final String HAS_LOGIN = "pref::has_login";
