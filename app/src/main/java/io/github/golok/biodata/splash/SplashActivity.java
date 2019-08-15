@@ -5,7 +5,7 @@ import android.os.Handler;
 
 import io.github.golok.biodata.R;
 import io.github.golok.biodata.common.BaseActivity;
-import io.github.golok.biodata.main.MainActivity;
+import io.github.golok.biodata.onboarding.OnBoardingActivity;
 
 /**
  * Satria Adi Putra
@@ -23,7 +23,7 @@ public class SplashActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                show(MainActivity.class);
+                show(OnBoardingActivity.class);
                 finish();
             }
         }, 1000L);

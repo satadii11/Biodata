@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import io.github.golok.biodata.R;
+import io.github.golok.biodata.login.LoginActivity;
 import io.github.golok.biodata.main.MainActivity;
 import io.github.golok.biodata.utils.SharedPreferencesUtil;
 
@@ -33,8 +34,7 @@ public class OnBoardingThirdFragment extends Fragment {
             public void onClick(View v) {
                 Context context = getContext();
                 if (context != null) {
-                    SharedPreferencesUtil.setLogin(context, true);
-                    context.startActivity(new Intent(context, MainActivity.class));
+                    context.startActivity(new Intent(context, LoginActivity.class));
                     Activity activity = getActivity();
                     if (activity != null) activity.finish();
                 }

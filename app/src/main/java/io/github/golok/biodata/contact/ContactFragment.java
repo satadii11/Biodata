@@ -6,13 +6,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import io.github.golok.biodata.R;
+import io.github.golok.biodata.common.BaseFragment;
 import io.github.golok.biodata.model.Person;
 import io.github.golok.biodata.utils.TextViewUtil;
 
@@ -22,7 +24,7 @@ import io.github.golok.biodata.utils.TextViewUtil;
  * IF-4
  * Senin, 20 Mei 2019
  */
-public class ContactFragment extends Fragment implements ContactContract.View {
+public class ContactFragment extends BaseFragment implements ContactContract.View {
 
     private ContactContract.Presenter presenter;
 
@@ -32,6 +34,7 @@ public class ContactFragment extends Fragment implements ContactContract.View {
     private TextView tvFacebook;
     private TextView tvGithub;
     private TextView tvLinkedin;
+    private Toolbar tbContact;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -44,6 +47,20 @@ public class ContactFragment extends Fragment implements ContactContract.View {
         tvFacebook = view.findViewById(R.id.tv_contact_facebook);
         tvGithub = view.findViewById(R.id.tv_contact_github);
         tvLinkedin = view.findViewById(R.id.tv_contact_linkedin);
+        tbContact = view.findViewById(R.id.tb_contact);
+
+        tbContact.inflateMenu(R.menu.menu_main);
+        tbContact.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.menu_logout) {
+                    logout();
+                    return true;
+                }
+
+                return false;
+            }
+        });
 
         TextViewUtil.underline(tvEmail);
         TextViewUtil.underline(tvPhone);

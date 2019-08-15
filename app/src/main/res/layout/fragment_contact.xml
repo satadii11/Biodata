@@ -28,7 +28,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/message_email" />
+                android:text="@string/message_email"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_contact_email"
@@ -37,14 +38,14 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 tools:text="satadii11@gmail.com" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/message_phone" />
+                android:text="@string/message_phone"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_contact_phone"
@@ -53,14 +54,14 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 tools:text="082120574794" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/message_linkedin" />
+                android:text="@string/message_linkedin"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_contact_linkedin"
@@ -69,14 +70,14 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 tools:text="\@satadii11" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/message_instagram" />
+                android:text="@string/message_instagram"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_contact_instagram"
@@ -85,14 +86,14 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 tools:text="\@satadii11" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/message_github" />
+                android:text="@string/message_github"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_contact_github"
@@ -101,14 +102,14 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 tools:text="golok56" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/message_facebook" />
+                android:text="@string/message_facebook"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_contact_facebook"
@@ -118,7 +119,6 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 tools:text="satadii11" />
 
         </LinearLayout>

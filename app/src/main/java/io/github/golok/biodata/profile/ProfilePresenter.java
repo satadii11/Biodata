@@ -24,5 +24,6 @@ public class ProfilePresenter implements ProfileContract.Presenter {
         view.showName(me.getNama());
         view.showNim(me.getNim());
         view.showDescription(me.getDeskripsi());
+        view.showClass(me.getKelas());
     }
 }

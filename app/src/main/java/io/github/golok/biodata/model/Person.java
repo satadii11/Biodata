@@ -1,7 +1,11 @@
 package io.github.golok.biodata.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 /**
  * Satria Adi Putra
@@ -9,10 +13,14 @@ import android.os.Parcelable;
  * IF-4
  * Senin, 20 Mei 2019
  */
+@Entity
 public class Person implements Parcelable, Comparable<Person> {
+    @PrimaryKey
+    @NonNull
+    private String nim;
+    @Ignore
     private int foto;
     private String nama;
-    private String nim;
     private String kelas;
     private String deskripsi;
     private String email;
@@ -23,6 +31,23 @@ public class Person implements Parcelable, Comparable<Person> {
     private String github;
     private String linkedin;
 
+    public Person(@NonNull String nim, String nama, String kelas, String deskripsi, String email,
+                  String birthDay, String phone, String instagram, String facebook, String github,
+                  String linkedin) {
+        this.nim = nim;
+        this.nama = nama;
+        this.kelas = kelas;
+        this.deskripsi = deskripsi;
+        this.email = email;
+        this.birthDay = birthDay;
+        this.phone = phone;
+        this.instagram = instagram;
+        this.facebook = facebook;
+        this.github = github;
+        this.linkedin = linkedin;
+    }
+
+    @Ignore
     public Person(int foto, String nama, String nim, String kelas, String deskripsi, String birthDay) {
         this.foto = foto;
         this.nama = nama;
@@ -32,6 +57,7 @@ public class Person implements Parcelable, Comparable<Person> {
         this.birthDay = birthDay;
     }
 
+    @Ignore
     public Person(String nama, String nim, String kelas, String email, String phone,
                   String instagram) {
         this.nama = nama;
@@ -42,6 +68,7 @@ public class Person implements Parcelable, Comparable<Person> {
         this.instagram = instagram;
     }
 
+    @Ignore
     public Person(String nama, String email, String phone, String instagram, String facebook, String github,
                   String linkedin) {
         this.nama = nama;
@@ -53,6 +80,7 @@ public class Person implements Parcelable, Comparable<Person> {
         this.linkedin = linkedin;
     }
 
+    @Ignore
     protected Person(Parcel in) {
         foto = in.readInt();
         nama = in.readString();
@@ -114,6 +142,50 @@ public class Person implements Parcelable, Comparable<Person> {
 
         Person another = (Person) obj;
         return another.getNim().equals(getNim());
+    }
+
+    public void setNim(@NonNull String nim) {
+        this.nim = nim;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public void setKelas(String kelas) {
+        this.kelas = kelas;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
     }
 
     public String getKelas() {

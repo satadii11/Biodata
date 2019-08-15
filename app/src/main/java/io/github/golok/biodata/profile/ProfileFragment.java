@@ -3,14 +3,16 @@ package io.github.golok.biodata.profile;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.github.golok.biodata.R;
+import io.github.golok.biodata.common.BaseFragment;
 import io.github.golok.biodata.model.Person;
 
 /**
@@ -19,7 +21,7 @@ import io.github.golok.biodata.model.Person;
  * IF-4
  * Selasa, 21 Mei 2019
  */
-public class ProfileFragment extends Fragment implements ProfileContract.View {
+public class ProfileFragment extends BaseFragment implements ProfileContract.View {
 
     private ProfileContract.Presenter presenter;
 
@@ -27,7 +29,9 @@ public class ProfileFragment extends Fragment implements ProfileContract.View {
     private TextView tvName;
     private TextView tvNim;
     private TextView tvDesc;
+    private TextView tvKelas;
     private TextView tvBirthday;
+    private Toolbar tbProfile;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -38,7 +42,22 @@ public class ProfileFragment extends Fragment implements ProfileContract.View {
         tvName = view.findViewById(R.id.tv_profile_name);
         tvNim = view.findViewById(R.id.tv_profile_nim);
         tvDesc = view.findViewById(R.id.tv_profile_description);
+        tvKelas = view.findViewById(R.id.tv_profile_class);
         tvBirthday = view.findViewById(R.id.tv_profile_birthday);
+        tbProfile = view.findViewById(R.id.tb_profile);
+
+        tbProfile.inflateMenu(R.menu.menu_main);
+        tbProfile.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.menu_logout) {
+                    logout();
+                    return true;
+                }
+
+                return false;
+            }
+        });
 
         Resources resources = getResources();
         presenter = new ProfilePresenter(new Person(
@@ -77,5 +96,10 @@ public class ProfileFragment extends Fragment implements ProfileContract.View {
     @Override
     public void showBirthday(String birthday) {
         tvBirthday.setText(birthday);
+    }
+
+    @Override
+    public void showClass(String kelas) {
+        tvKelas.setText(kelas);
     }
 }

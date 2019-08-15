@@ -3,6 +3,8 @@
 
     <string name="action_start">Mulai</string>
     <string name="action_save">Save</string>
+    <string name="action_login">Login</string>
+    <string name="action_register">Register</string>
 
     <string name="menu_profile">Profile</string>
     <string name="menu_contact">Contact</string>
@@ -28,6 +30,11 @@
     <string name="message_github">Github</string>
     <string name="message_facebook">Facebook</string>
     <string name="message_linkedin">LinkedIn</string>
+    <string name="message_login">Login</string>
+    <string name="message_password">Password</string>
+    <string name="message_belum_punya_akun">Belum punya akun? Daftar di sini</string>
+    <string name="message_sudah_punya_akun">Sudah punya akun? Masuk di sini</string>
+    <string name="message_register">Register</string>
 
     <string name="my_name">Satria Adi Putra</string>
     <string name="my_email">satadii11@gmail.com</string>
@@ -40,4 +47,5 @@
     <string name="my_facebook">satadii11</string>
     <string name="my_github">golok56</string>
     <string name="my_description">Saya adalah seorang mahasiswa Teknik Informatika di Universitas Komputer Indonesia. Saya menyukai hal-hal berbau problem solving. Saya menekuni pemrograman Android sejak Semester 3. Sekarang saya sedang mempelajari Machine Learning untuk menyelesaikan skripsi saya nanti.</string>
+    <string name="action_logout">Logout</string>
 </resources>

@@ -15,6 +15,7 @@ public interface ProfileContract {
         void showDescription(String desc);
         void showNim(String nim);
         void showBirthday(String birthday);
+        void showClass(String kelas);
     }
 
     interface Presenter extends BasePresenter {
