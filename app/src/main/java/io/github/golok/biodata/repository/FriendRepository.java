@@ -2,8 +2,15 @@ package io.github.golok.biodata.repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.Callable;
 
 import io.github.golok.biodata.model.Person;
+import io.github.golok.biodata.services.room.PersonDao;
+import io.reactivex.Scheduler;
+import io.reactivex.Single;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Satria Adi Putra
@@ -14,43 +21,59 @@ import io.github.golok.biodata.model.Person;
 public class FriendRepository {
     private static FriendRepository instance;
 
-    public static FriendRepository getInstance() {
+    public static FriendRepository getInstance(PersonDao dao) {
         if (instance == null) {
-            instance = new FriendRepository();
+            instance = new FriendRepository(dao);
         }
 
         return instance;
     }
 
-    private ArrayList<Person> friends = new ArrayList<Person>() {{
-        add(new Person("Andri R.", "10116120", "IF-5", "bartoandri@gmail.com", "082122982122", "andri.rh"));
-        add(new Person("Suyatna", "10116320", "IF-10", "suyatnah.fh@gmail.com", "085621763121", "zuya"));
-        add(new Person("Lukmannudin", "10116212", "IF-8", "laode.lukmannudin@gmail.com", "081212567654", "lukmannudin"));
-        add(new Person("Diki Supriadi", "10116213", "IF-8", "diki.s@gmail.com", "085652781234", "suarahati69"));
-        add(new Person("Anisa Dewi", "10116183", "IF-6", "anisadewi@gmail.com", "089672126547", "andwuk"));
-    }};
+    private PersonDao dao;
 
-    private FriendRepository() {
-        Collections.sort(friends);
+    private FriendRepository(PersonDao dao) {
+        this.dao = dao;
     }
 
-    public void addFriend(Person friend) {
-        friends.add(friend);
-        Collections.sort(friends);
+    public Single<Long> addFriend(final Person friend) {
+        return Single
+                .fromCallable(new Callable<Long>() {
+                    @Override
+                    public Long call() throws Exception {
+                        return dao.insertNewPerson(friend);
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public void removeFriend(Person friend) {
-        friends.remove(friend);
-        Collections.sort(friends);
+    public Single<Integer> removeFriend(final Person friend) {
+        return Single
+                .fromCallable(new Callable<Integer>() {
+                    @Override
+                    public Integer call() throws Exception {
+                        return dao.deleteExistingPerson(friend);
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public void updateFriend(Person oldFriend, Person newFriend) {
-        friends.remove(oldFriend);
-        friends.add(newFriend);
-        Collections.sort(friends);
+    public Single<Integer> updateFriend(final Person friend) {
+        return Single
+                .fromCallable(new Callable<Integer>() {
+                    @Override
+                    public Integer call() throws Exception {
+                        return dao.updateExistingPerson(friend);
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public ArrayList<Person> getFriends() {
-        return friends;
+    public Single<List<Person>> getFriends() {
+        return dao.findAllPersons()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 }

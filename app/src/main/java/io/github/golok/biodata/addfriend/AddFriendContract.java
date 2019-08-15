@@ -1,6 +1,5 @@
 package io.github.golok.biodata.addfriend;
 
-import io.github.golok.biodata.common.BasePresenter;
 import io.github.golok.biodata.model.Person;
 
 /**
@@ -15,7 +14,7 @@ public interface AddFriendContract {
         void showDetail(Person person);
     }
 
-    interface Presenter extends BasePresenter {
+    interface Presenter {
         void save(Person person);
     }
 }

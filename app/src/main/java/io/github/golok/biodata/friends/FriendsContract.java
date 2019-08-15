@@ -1,6 +1,6 @@
 package io.github.golok.biodata.friends;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import io.github.golok.biodata.common.BasePresenter;
 import io.github.golok.biodata.model.Person;
@@ -13,13 +13,11 @@ import io.github.golok.biodata.model.Person;
  */
 public interface FriendsContract {
     interface View {
-        void setFriends(ArrayList<Person> friends);
+        void setFriends(List<Person> friends);
         void showAddFriend();
-        void updateFriends();
     }
 
     interface Presenter extends BasePresenter {
         void addFriend();
-        void resume();
     }
 }

@@ -1,7 +1,10 @@
 package io.github.golok.biodata.frienddetail;
 
+import android.annotation.SuppressLint;
+
 import io.github.golok.biodata.model.Person;
 import io.github.golok.biodata.repository.FriendRepository;
+import io.reactivex.functions.Consumer;
 
 /**
  * Satria Adi Putra
@@ -14,8 +17,9 @@ public class FriendDetailPresenter implements FriendDetailContract.Presenter {
     private FriendDetailContract.View view;
     private Person friend;
 
-    FriendDetailPresenter(FriendDetailContract.View view, Person friend) {
-        friendRepository = FriendRepository.getInstance();
+    public FriendDetailPresenter(FriendRepository friendRepository, FriendDetailContract.View view,
+                                 Person friend) {
+        this.friendRepository = friendRepository;
         this.view = view;
         this.friend = friend;
     }
@@ -50,15 +54,29 @@ public class FriendDetailPresenter implements FriendDetailContract.Presenter {
         view.openDialog();
     }
 
+    @SuppressLint("CheckResult")
     @Override
     public void delete() {
-        friendRepository.removeFriend(friend);
-        view.showMessage("Success deleting a friend");
-        view.showMainActivity();
+        friendRepository.removeFriend(friend)
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        onDeleteFriendSuccess();
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                    }
+                });
     }
 
     @Override
     public void edit() {
         view.showEditForm(friend);
+    }
+
+    private void onDeleteFriendSuccess() {
+        view.showMessage("Success deleting a friend");
+        view.showMainActivity();
     }
 }

@@ -17,6 +17,8 @@ import io.github.golok.biodata.common.BaseActivity;
 import io.github.golok.biodata.editfriend.EditFriendActivity;
 import io.github.golok.biodata.main.MainActivity;
 import io.github.golok.biodata.model.Person;
+import io.github.golok.biodata.repository.FriendRepository;
+import io.github.golok.biodata.services.room.AppDatabase;
 import io.github.golok.biodata.utils.TextViewUtil;
 
 /**
@@ -58,7 +60,9 @@ public class FriendDetailActivity extends BaseActivity implements FriendDetailCo
         TextViewUtil.underline(tvEmail);
 
         Person friend = getIntent().getParcelableExtra(EXTRA_PERSON);
-        presenter = new FriendDetailPresenter(this, friend);
+        AppDatabase database = AppDatabase.getInstance(getApplicationContext());
+        FriendRepository friendRepository = FriendRepository.getInstance(database.personDao());
+        presenter = new FriendDetailPresenter(friendRepository, this, friend);
         presenter.start();
 
         tvPhone.setOnClickListener(new View.OnClickListener() {
@@ -176,7 +180,6 @@ public class FriendDetailActivity extends BaseActivity implements FriendDetailCo
         Intent intent = new Intent(this, EditFriendActivity.class)
                 .putExtra(EditFriendActivity.EXTRA_PERSON, person);
         startActivity(intent);
-        finish();
     }
 
     @Override

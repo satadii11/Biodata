@@ -11,6 +11,8 @@ import io.github.golok.biodata.R;
 import io.github.golok.biodata.common.BaseActivity;
 import io.github.golok.biodata.frienddetail.FriendDetailActivity;
 import io.github.golok.biodata.model.Person;
+import io.github.golok.biodata.repository.FriendRepository;
+import io.github.golok.biodata.services.room.AppDatabase;
 
 /**
  * Satria Adi Putra
@@ -45,7 +47,9 @@ public class EditFriendActivity extends BaseActivity implements EditFriendContra
         btnSave = findViewById(R.id.btn_edit_save);
 
         Person friend = getIntent().getParcelableExtra(EXTRA_PERSON);
-        presenter = new EditFriendPresenter(friend, this);
+        AppDatabase database = AppDatabase.getInstance(getApplicationContext());
+        FriendRepository friendRepository = FriendRepository.getInstance(database.personDao());
+        presenter = new EditFriendPresenter(friendRepository, friend, this);
         presenter.start();
 
         btnSave.setOnClickListener(new View.OnClickListener() {

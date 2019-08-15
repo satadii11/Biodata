@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import io.github.golok.biodata.R;
 import io.github.golok.biodata.frienddetail.FriendDetailActivity;
@@ -25,9 +26,9 @@ import io.github.golok.biodata.model.Person;
 public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHolder> {
     private Context context;
 
-    private ArrayList<Person> friends;
+    private List<Person> friends;
 
-    FriendsAdapter(Context context, ArrayList<Person> friends) {
+    FriendsAdapter(Context context, List<Person> friends) {
         this.context = context;
         this.friends = friends;
     }

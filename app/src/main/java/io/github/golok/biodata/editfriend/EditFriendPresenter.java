@@ -1,7 +1,10 @@
 package io.github.golok.biodata.editfriend;
 
+import android.annotation.SuppressLint;
+
 import io.github.golok.biodata.model.Person;
 import io.github.golok.biodata.repository.FriendRepository;
+import io.reactivex.functions.Consumer;
 
 /**
  * Satria Adi Putra
@@ -14,17 +17,27 @@ public class EditFriendPresenter implements EditFriendContract.Presenter {
     private Person friend;
     private EditFriendContract.View view;
 
-    EditFriendPresenter(Person friend, EditFriendContract.View view) {
-        friendRepository = FriendRepository.getInstance();
+    EditFriendPresenter(FriendRepository friendRepository, Person friend,
+                               EditFriendContract.View view) {
+        this.friendRepository = friendRepository;
         this.friend = friend;
         this.view = view;
     }
 
+    @SuppressLint("CheckResult")
     @Override
-    public void save(Person person) {
-        friendRepository.updateFriend(friend, person);
-        view.showMessage("Success editing new friend");
-        view.showDetail(person);
+    public void save(final Person person) {
+        friendRepository.updateFriend(person)
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        onEditFriendSuccess(person);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                    }
+                });
     }
 
     @Override
@@ -35,5 +48,10 @@ public class EditFriendPresenter implements EditFriendContract.Presenter {
         view.showPhone(friend.getPhone());
         view.showEmail(friend.getEmail());
         view.showInstagram(friend.getInstagram());
+    }
+
+    private void onEditFriendSuccess(Person person) {
+        view.showMessage("Success editing a friend");
+        view.showDetail(person);
     }
 }

@@ -12,12 +12,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import io.github.golok.biodata.R;
 import io.github.golok.biodata.addfriend.AddFriendActivity;
 import io.github.golok.biodata.common.BaseFragment;
 import io.github.golok.biodata.model.Person;
+import io.github.golok.biodata.repository.FriendRepository;
+import io.github.golok.biodata.services.room.AppDatabase;
 
 /**
  * Satria Adi Putra
@@ -45,7 +47,10 @@ public class FriendsFragment extends BaseFragment implements FriendsContract.Vie
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        presenter = new FriendsPresenter(this);
+
+        AppDatabase database = AppDatabase.getInstance(getActivity().getApplicationContext());
+        FriendRepository friendRepository = FriendRepository.getInstance(database.personDao());
+        presenter = new FriendsPresenter(friendRepository, this);
         presenter.start();
 
         tbFriends.inflateMenu(R.menu.menu_friends);
@@ -70,11 +75,11 @@ public class FriendsFragment extends BaseFragment implements FriendsContract.Vie
     @Override
     public void onResume() {
         super.onResume();
-        presenter.resume();
+        presenter.start();
     }
 
     @Override
-    public void setFriends(ArrayList<Person> friends) {
+    public void setFriends(List<Person> friends) {
         friendsAdapter = new FriendsAdapter(getContext(), friends);
         rvFriends.setAdapter(friendsAdapter);
     }
@@ -86,10 +91,5 @@ public class FriendsFragment extends BaseFragment implements FriendsContract.Vie
             Intent intent = new Intent(context, AddFriendActivity.class);
             context.startActivity(intent);
         }
-    }
-
-    @Override
-    public void updateFriends() {
-        friendsAdapter.notifyDataSetChanged();
     }
 }
