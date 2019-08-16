@@ -10,7 +10,7 @@ import io.reactivex.functions.Consumer;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Senin, 20 Mei 2019
+ * Kamis, 15 Agustus 2019
  */
 public class EditFriendPresenter implements EditFriendContract.Presenter {
     private FriendRepository friendRepository;

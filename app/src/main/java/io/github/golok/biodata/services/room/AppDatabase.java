@@ -8,6 +8,12 @@ import android.content.Context;
 import io.github.golok.biodata.model.Person;
 import io.github.golok.biodata.model.User;
 
+/**
+ * Satria Adi Putra
+ * 10116167
+ * IF-4
+ * Kamis, 15 Agustus 2019
+ */
 @Database(entities = {User.class, Person.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;

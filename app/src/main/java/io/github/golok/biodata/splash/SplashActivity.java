@@ -11,7 +11,7 @@ import io.github.golok.biodata.onboarding.OnBoardingActivity;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Selasa, 21 Mei 2019
+ * Kamis, 15 Agustus 2019
  */
 public class SplashActivity extends BaseActivity {
 

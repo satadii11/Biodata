@@ -48,6 +48,8 @@
                 android:id="@+id/et_edit_nim"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:enabled="false"
+                android:focusable="false"
                 android:hint="@string/message_nim"
                 android:inputType="number" />
         </android.support.design.widget.TextInputLayout>

@@ -5,6 +5,12 @@ import android.annotation.SuppressLint;
 import io.github.golok.biodata.repository.UserRepository;
 import io.reactivex.functions.Consumer;
 
+/**
+ * Satria Adi Putra
+ * 10116167
+ * IF-4
+ * Kamis, 15 Agustus 2019
+ */
 class RegisterPresenter implements RegisterContract.Presenter {
     private UserRepository userRepository;
     private RegisterContract.View view;

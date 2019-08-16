@@ -16,6 +16,12 @@ import io.github.golok.biodata.repository.UserRepository;
 import io.github.golok.biodata.services.room.AppDatabase;
 import io.github.golok.biodata.utils.TextViewUtil;
 
+/**
+ * Satria Adi Putra
+ * 10116167
+ * IF-4
+ * Kamis, 15 Agustus 2019
+ */
 public class RegisterActivity extends BaseActivity implements RegisterContract.View {
 
     private EditText etName;

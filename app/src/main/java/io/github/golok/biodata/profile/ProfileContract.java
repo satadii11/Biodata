@@ -6,7 +6,7 @@ import io.github.golok.biodata.common.BasePresenter;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Selasa, 21 Mei 2019
+ * Kamis, 15 Agustus 2019
  */
 public interface ProfileContract {
     interface View {

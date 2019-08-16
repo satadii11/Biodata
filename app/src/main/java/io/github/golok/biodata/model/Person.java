@@ -11,7 +11,7 @@ import android.support.annotation.NonNull;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Senin, 20 Mei 2019
+ * Kamis, 15 Agustus 2019
  */
 @Entity
 public class Person implements Parcelable, Comparable<Person> {

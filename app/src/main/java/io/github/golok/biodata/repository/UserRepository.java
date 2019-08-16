@@ -8,6 +8,12 @@ import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * Satria Adi Putra
+ * 10116167
+ * IF-4
+ * Kamis, 15 Agustus 2019
+ */
 public class UserRepository {
     private static UserRepository instance;
 

@@ -7,6 +7,12 @@ import io.github.golok.biodata.model.User;
 import io.github.golok.biodata.repository.UserRepository;
 import io.reactivex.functions.Consumer;
 
+/**
+ * Satria Adi Putra
+ * 10116167
+ * IF-4
+ * Kamis, 15 Agustus 2019
+ */
 class LoginPresenter implements LoginContract.Presenter {
     private UserRepository userRepository;
     private LoginContract.View view;

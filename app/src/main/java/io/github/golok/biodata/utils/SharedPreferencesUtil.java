@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Senin, 20 Mei 2019
+ * Kamis, 15 Agustus 2019
  */
 public class SharedPreferencesUtil {
     private static final String SHARED_PREFERENCES_NAME = "biodata_preferences";

@@ -25,7 +25,7 @@ import io.github.golok.biodata.utils.TextViewUtil;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Senin, 20 Mei 2019
+ * Kamis, 15 Agustus 2019
  */
 public class FriendDetailActivity extends BaseActivity implements FriendDetailContract.View {
     public static final String EXTRA_PERSON = "extra::person";
@@ -185,7 +185,8 @@ public class FriendDetailActivity extends BaseActivity implements FriendDetailCo
     @Override
     public void showMainActivity() {
         Intent intent = new Intent(this, MainActivity.class)
-                .putExtra(MainActivity.EXTRA_DATA, true);
+                .putExtra(MainActivity.EXTRA_DATA, true)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }

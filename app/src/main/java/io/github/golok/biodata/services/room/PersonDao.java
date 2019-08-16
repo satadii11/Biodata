@@ -12,9 +12,15 @@ import java.util.List;
 import io.github.golok.biodata.model.Person;
 import io.reactivex.Single;
 
+/**
+ * Satria Adi Putra
+ * 10116167
+ * IF-4
+ * Kamis, 15 Agustus 2019
+ */
 @Dao
 public interface PersonDao {
-    @Query("SELECT * FROM User")
+    @Query("SELECT * FROM Person")
     Single<List<Person>> findAllPersons();
 
     @Insert(onConflict = OnConflictStrategy.FAIL)

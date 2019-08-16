@@ -25,7 +25,7 @@ import io.github.golok.biodata.services.room.AppDatabase;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Senin, 20 Mei 2019
+ * Kamis, 15 Agustus 2019
  */
 public class FriendsFragment extends BaseFragment implements FriendsContract.View {
 

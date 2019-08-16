@@ -18,7 +18,7 @@ import io.github.golok.biodata.services.room.AppDatabase;
  * Satria Adi Putra
  * 10116167
  * IF-4
- * Senin, 20 Mei 2019
+ * Kamis, 15 Agustus 2019
  */
 public class EditFriendActivity extends BaseActivity implements EditFriendContract.View {
     public static final String EXTRA_PERSON = "extra::person";
@@ -75,7 +75,8 @@ public class EditFriendActivity extends BaseActivity implements EditFriendContra
     @Override
     public void showDetail(Person person) {
         Intent intent = new Intent(this, FriendDetailActivity.class)
-                .putExtra(FriendDetailActivity.EXTRA_PERSON, person);
+                .putExtra(FriendDetailActivity.EXTRA_PERSON, person)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }
